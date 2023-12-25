@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>6</title>
+  <style>
+    /* Стили для линии */
+    .line {
+      width: 72%;
+      height: 3px;
+      background-color: black;
+      margin-top: 20px;
+      transition: all 0.3s ease-in-out; /* Плавное изменение размеров и положения */
+    }
+  </style>
+</head>
+<body>
+  <!-- Задание 1: Изменение горизонтальной линии -->
+  <div class="line" id="horizontalLine"></div>
+
+  <!-- Задание 2: Анкета данных сотрудника -->
+  <h2>Анкета данных сотрудника</h2>
+  <form id="employeeForm">
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" name="birthdate"><br><br>
+  
+    <label for="gender">Пол:</label>
+    <input type="text" id="gender" name="gender"><br><br>
+  
+    <label for="position">Должность:</label>
+    <input type="text" id="position" name="position"><br><br>
+  
+    <input type="submit" value="Отправить">
+  </form>
+
+  <!-- Задание 3: Анкета слушателя курсов -->
+  <h2>Анкета слушателя курсов</h2>
+  <form id="courseForm">
+    <label for="course">Курс:</label>
+    <select id="course" name="course">
+      <option value="course1">Первый курс</option>
+      <option value="course2">Второй курс</option>
+      <option value="course3">Третий курс</option>
+    </select><br><br>
+
+    <label for="language">Язык:</label>
+    <input type="text" id="language" name="language"><br><br>
+
+    <label for="education">Форма образования:</label>
+    <select id="education" name="education">
+      <option value="full-time">Очная</option>
+      <option value="part-time">Заочная</option>
+      <option value="distance">Дистанционная</option>
+    </select><br><br>
+
+    <label for="duration">Продолжительность курса:</label>
+    <input type="number" id="duration" name="duration"><br><br>
+
+    <label for="cost">Стоимость:</label>
+    <input type="number" id="cost" name="cost"><br><br>
+
+    <input type="submit" value="Отправить">
+  </form>
+
+  <script>
+    // Задание 1: Изменение размеров и положения линии
+    var line = document.getElementById('horizontalLine');
+    line.style.width = '50%';
+    line.style.height = '5px';
+    line.style.marginTop = '50px';
+
+    // Задание 2: Обработка анкеты данных сотрудника
+    document.getElementById('employeeForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var formData = new FormData(event.target);
+      var birthdate = formData.get('birthdate');
+      var gender = formData.get('gender');
+      var position = formData.get('position');
+      // Здесь можно обрабатывать данные сотрудника
+      console.log('Дата рождения:', birthdate);
+      console.log('Пол:', gender);
+      console.log('Должность:', position);
+    });
+
+    // Задание 3: Обработка анкеты слушателя курсов
+    document.getElementById('courseForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var formData = new FormData(event.target);
+      var course = formData.get('course');
+      var language = formData.get('language');
+      var education = formData.get('education');
+      var duration = formData.get('duration');
+      var cost = formData.get('cost');
+      // Здесь можно обрабатывать данные слушателя курсов
+      console.log('Выбранный курс:', course);
+      console.log('Язык:', language);
+      console.log('Форма образования:', education);
+      console.log('Продолжительность:', duration);
+      console.log('Стоимость:', cost);
+    });
+  </script>
+</body>
+</html>

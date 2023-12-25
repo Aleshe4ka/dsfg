@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+</head>
+<body>
+
+  <script>
+    // Создание строки из 22 первых букв русского алфавита
+var str = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+
+// Вывод символов с указанными номерами
+var symbols = [2, 3, 4, 6, 7, 15];
+var result = '';
+
+symbols.forEach(function(num, index) {
+    result += str.charAt(num - 1); // -1, так как индексация с нуля
+    if (index !== symbols.length - 1) {
+        result += ' ' + num + ', '; // разделение номеров
+    } else {
+        result += ' ' + num; // последний номер без разделителя
+    }
+});
+
+alert(result);
+
+  </script>
+
+
+<script>
+ // Построение строки из цифр
+var numbers = '020304060715';
+
+// Выделение четырех трехзначных чисел
+var extractedNumbers = [
+    numbers.substr(0, 3),
+    numbers.substr(3, 3),
+    numbers.substr(6, 3),
+    numbers.substr(9, 3)
+];
+
+// Построение оператора присваивания с арифметическим выражением
+var resultOperation = (extractedNumbers[0] + extractedNumbers[1] - extractedNumbers[2]) / extractedNumbers[3];
+
+// Вывод результата в окно браузера
+alert(resultOperation);
+
+</script>
+
+
+<script>
+// Создание строки текста из букв с указанными номерами
+var letters = [
+    str.charAt(2 - 1),
+    str.charAt(3 - 1),
+    str.charAt(4 - 1),
+    str.charAt(6 - 1),
+    str.charAt(7 - 1),
+    str.charAt(15 - 1)
+];
+
+// Получение элемента на странице и вывод строки
+var textString = document.getElementById('textString');
+textString.innerHTML = letters.join('');
+
+
+
+</script>
+
+<div id="outputElement"></div>
+
+<script>
+  // Запрос с двумя кнопками для Да и Нет
+var confirmResult = confirm("Вычислить заданные выражения?");
+
+if (confirmResult) {
+    var a = 5,
+        b = 3,
+        c = 2,
+        d = 8,
+        e = 6,
+        f = 4;
+
+    var resultYes = (a * b) - Math.pow(c, 2);
+    var resultNo = 2 * d / (f + e / 4);
+
+    document.writeln("Результат для Да: " + resultYes + "<br>");
+    document.writeln("Результат для Нет: " + resultNo);
+}
+
+</script>
+  </body>
+  </html>

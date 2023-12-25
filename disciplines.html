@@ -1,0 +1,59 @@
+<!-- disciplines.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Список дисциплин</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="animated fadeIn">Список дисциплин</h1>
+    </header>
+    
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="group.html">Список группы</a></li>
+            <li><a href="disciplines.html">Список дисциплин</a></li>
+        </ul>
+    </nav>
+    
+    <section class="disciplines-content main-content">
+        <h2 class="animated fadeInUp">Изучаемые дисциплины</h2>
+        
+        <ul class="animated fadeIn">
+            <li>Web-дизайн и шаблоны проектирования</li>
+            <li>Базы данных и SQL</li>
+            <li>Программирование сетевых приложений</li>
+            <li>Экономика предприятия</li>
+            <li>Современные Web-приложения</li>
+            <li>Программирование мобильных информационных систем</li>
+        </ul>
+    </section>
+
+    <footer class="footer animated fadeIn">
+        <p>&copy; 2120 Ваша группа</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animate.css"></script>
+    <script>
+        $(document).ready(function () {
+            $('.animated').addClass('animate__animated');
+
+            $(window).scroll(function () {
+                $('.animated').each(function () {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+
+                    if (position < scroll + $(window).height()) {
+                        $(this).addClass('animate__fadeInUp');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

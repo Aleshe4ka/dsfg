@@ -1,0 +1,157 @@
+/* styles.css */
+/* Reset styles */
+body, h1, h2, h3, ul, p, a, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --main-bg-color: #f8f9fa;
+    --header-bg-color: #343a40;
+    --nav-bg-color: #343a40;
+    --nav-text-color: #ffffff;
+    --nav-hover-color: #6c757d;
+    --main-border-color: #dee2e6;
+    --footer-bg-color: #343a40;
+    --footer-text-color: #ffffff;
+    --accent-color: #007bff;
+    --primary-font: 'Montserrat', sans-serif;
+}
+
+/* Body styling */
+body {
+    font-family: var(--primary-font);
+    background-color: var(--main-bg-color);
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Header styling */
+.header {
+    background-color: var(--header-bg-color);
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Navigation styling */
+.navigation {
+    background-color: var(--nav-bg-color);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation li {
+    margin-right: 1.5rem;
+}
+
+.navigation a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+    color: var(--nav-hover-color);
+}
+
+/* Main content styling */
+.main-content {
+    border: 1px solid var(--main-border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.group-content,
+.disciplines-content {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    border: 1px solid var(--main-border-color);
+    padding: 1.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Footer styling */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 2rem;
+}
+
+/* Links styling */
+a {
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation li {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+
+    .main-content,
+    .group-content,
+    .disciplines-content {
+        margin: 2rem;
+    }
+}
+
+/* Animate.css styles */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Изображение с подписью</title>
+  <style>
+    /* Стили для строки */
+    .hover-text {
+      font-size: 24pt;
+      transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+    .hover-text:hover {
+      font-size: 64pt;
+      color: blue;
+      background-color: white;
+    }
+
+    /* Стили для изображения и подписи */
+    .image-with-caption {
+      display: flex;
+      align-items: center;
+    }
+
+    .image-with-caption img {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .caption {
+      font-size: 16px;
+      color: black;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .caption:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- Строка -->
+  <p class="hover-text">Наведите курсор для изменения текста</p>
+
+  <!-- Изображение с надписью -->
+  <div class="image-with-caption">
+    <img src="3.jpg" id="mainImage" onclick="changeText()">
+    <p class="caption" onclick="changeText()">Надпись</p>
+  </div>
+
+  <script>
+    function changeText() {
+      var caption = document.querySelector('.caption');
+      var mainImage = document.getElementById('mainImage');
+
+      if (caption.innerHTML === 'Надпись') {
+        caption.innerHTML = 'Измененная надпись';
+        caption.style.color = 'red';
+        mainImage.src = '4.jpg';
+      } else {
+        caption.innerHTML = 'Надпись';
+        caption.style.color = 'black';
+        mainImage.src = '3.jpg';
+      }
+    }
+  </script>
+</body>
+</html>

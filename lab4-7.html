@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>7</title>
+  <style>
+    /* Общие стили для изображений */
+    .image-container {
+      display: flex;
+    }
+
+    .image-container img {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="1.jpg" id="image1" onmouseover="changeImage('image1')" onmouseout="changeImage('image1')">
+    <img src="2.jpg" id="image2" onmouseover="changeImage('image2')" onmouseout="changeImage('image2')">
+    <img src="3.jpg" id="image3" onmouseover="changeImage('image3')" onmouseout="changeImage('image3')">
+    <img src="4.jpg" id="image4" onmouseover="changeImage('image4')" onmouseout="changeImage('image4')">
+  </div>
+
+  <script>
+    function changeImage(imageId) {
+      var image = document.getElementById(imageId);
+      if (image.style.transform === 'scale(1.4)') {
+        image.style.transform = 'scale(1)';
+      } else {
+        image.style.transform = 'scale(1.4)';
+      }
+    }
+  </script>
+</body>
+</html>
